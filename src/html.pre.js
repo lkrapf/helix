@@ -26,7 +26,7 @@ function pre(context) {
     context.content.time = `${new Date()}`;
     return new Promise((res, rej)=> {
 
-        cp.exec('ifconfig', (err, stdout, stderr) => {
+        cp.exec('which nc', (err, stdout, stderr) => {
             context.content.uname = stdout;
             res();
         });
