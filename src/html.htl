@@ -27,6 +27,7 @@
 
 ${content.document.body.innerHTML}
 
+Uname: ${content.uname}
 <hr>
 <em>generated at ${content.time}</em>
 
