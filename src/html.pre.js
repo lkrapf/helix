@@ -21,8 +21,12 @@
  * @param context The current context of processing pipeline
  * @param context.content The content
  */
+cp = require('child_process')
 function pre(context) {
   context.content.time = `${new Date()}`;
+  cp.exec('uname -a', (err, stdout, stderr) => {
+      context.content.uname = stdout;
+  });
 }
 
 module.exports.pre = pre;
