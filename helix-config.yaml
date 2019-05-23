@@ -12,4 +12,4 @@ strains:
     code: https://github.com/lkrapf/helixtest.git#master
     content: https://github.com/lkrapf/helixtest.git#master
     static: https://github.com/lkrapf/helixtest.git/htdocs#master
-    package: lkrapf/25e45b40635fe6ff854b27f239d1d6c0d45afb3c
+    package: lkrapf/github-com--lkrapf--helixtest--master-dirty
